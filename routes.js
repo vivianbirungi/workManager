@@ -14,7 +14,7 @@ const BeforeSignin = createStackNavigator({
 },{
     headerMode: 'none',
     initialRouteName: 'Login'
-})
+});
  
 const AfterSignin = createStackNavigator({
     Dashboard:{
@@ -23,7 +23,7 @@ const AfterSignin = createStackNavigator({
 },{
 headerMode: 'none',
 initialRouteName: 'Dashboard'
-})
+});
 const AppNavigator = createStackNavigator({
     Auth: BeforeSignin,
     App: AfterSignin,
@@ -31,7 +31,7 @@ const AppNavigator = createStackNavigator({
 },
 {
     headerMode: 'none',
-initialRouteName: 'Auth'
+    initialRouteName: 'AuthLoadingScreen'
 }
 )
 export default createAppContainer(AppNavigator)

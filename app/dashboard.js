@@ -1,8 +1,20 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
-
+import AsyncStorage from '@react-native-community/async-storage'
 class Dashboard extends React.Component {
 
+
+    dologout(){
+        AsyncStorage.removeItem("token")
+        .then(
+            res=>{
+                this.props.navigation.navigate('Auth')
+            },
+            err =>{
+                alert("network Error try Later");
+            }
+        )
+    }
     render(){
         return (
             <View
@@ -10,7 +22,10 @@ class Dashboard extends React.Component {
             >
                 <View style={styles.dashboardWrapper}>
                 <Text style={ styles.userText}>Hey User</Text>
-                <TouchableOpacity style={ styles.logoutBtn}>
+                <TouchableOpacity style={ styles.logoutBtn}
+                 onPress ={() => this.props.navigation.navigate('Auth')}
+                
+                >
                     <Text style={styles.logoutBtnText}>Logout</Text>
                 </TouchableOpacity>
                 </View>
