@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, TextInput, ImageBackground} from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 class Login extends React.Component {
@@ -57,6 +57,9 @@ doLogin(){
     render(){
         const {email, password, loading} = this.state;
         return (
+            <ImageBackground  source={require("./back.jpg")} style={{width: '100%', height: '100%'}}>
+            <Text>Inside</Text>
+        
             <View
             style ={styles.container}
             >
@@ -102,6 +105,7 @@ doLogin(){
                </View>
                
             </View>
+            </ImageBackground>
         )
     }
 }
@@ -111,7 +115,8 @@ const styles = StyleSheet.create({
     container: {
         height: "100%",
         alignItems:"center",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: 'transparent'
 
 
     },
