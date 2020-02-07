@@ -58,7 +58,7 @@ doLogin(){
         const {email, password, loading} = this.state;
         return (
             <ImageBackground  source={require("./back.jpg")} style={{width: '100%', height: '100%'}}>
-            <Text>Inside</Text>
+            
         
             <View
             style ={styles.container}
@@ -122,6 +122,9 @@ const styles = StyleSheet.create({
     },
     formWrapper:{
         width: '90%',
+        backgroundColor: 'white',
+        padding: '10%',
+        borderRadius: 30
 
     },
     formRow:{
@@ -131,7 +134,8 @@ const styles = StyleSheet.create({
        backgroundColor:"#ddd",
        height: 40,
        paddingHorizontal: 10,
-       color: '#333'
+       color: '#333',
+       borderRadius: 10
     },
     welcomeText:{
         textAlign:'center',
@@ -149,6 +153,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color:'#fff',
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        borderRadius: 20
      }
 });
